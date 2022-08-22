@@ -7,12 +7,12 @@ export default function Form({ handleSubmit }) {
       onSubmit={handleSubmit}
     >
       <div>
-        <label htmlFor="name" className="sr-only">
-          Name
+        <label htmlFor="amt" className="sr-only">
+          Transfer Amount
         </label>
         <input
           type="number"
-          placeholder="Enter Amount"
+          placeholder="Transfer Amount"
           id="amt"
           className="rounded border pl-2"
         />
