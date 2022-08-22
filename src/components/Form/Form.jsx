@@ -1,14 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Form({ setAmt, handleFocus }) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    setAmt(event.target.amt.value);
-
-    event.target.reset();
-  };
-
+export default function Form({ handleSubmit }) {
   return (
     <form
       className="mx-auto flex w-48 flex-col items-center"
@@ -23,7 +15,6 @@ export default function Form({ setAmt, handleFocus }) {
           placeholder="Enter Amount"
           id="amt"
           className="rounded border pl-2"
-          onFocus={handleFocus}
         />
       </div>
 
@@ -38,6 +29,5 @@ export default function Form({ setAmt, handleFocus }) {
 }
 
 Form.propTypes = {
-  setAmt: PropTypes.func.isRequired,
-  handleFocus: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
