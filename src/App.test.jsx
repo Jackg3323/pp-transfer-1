@@ -2,7 +2,11 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
-const balance = 100;
+let balance;
+
+beforeEach(() => {
+  balance = 100;
+});
 
 it("renders the updated amount when the form is submitted", () => {
   const transferAmt = 50;
