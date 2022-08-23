@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Login from "./views/Login/Login";
 import apiService from "./api";
 import "./App.css";
 import Form from "./components/Form/Form";
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+      <Login />
       <Form handleSubmit={handleSubmit} />
 
       <p>
