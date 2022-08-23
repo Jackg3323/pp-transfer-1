@@ -2,13 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
-let balance;
-
-beforeEach(() => {
-  balance = 100;
-});
-
 it("renders the updated amount when the form is submitted", () => {
+  const balance = 100;
   const transferAmt = 50;
   const expectedTransferMsg = `You transferred ${transferAmt}`;
   const expectedBalanceMsg = `Your balance is now: ${balance - transferAmt}`;
@@ -23,6 +18,7 @@ it("renders the updated amount when the form is submitted", () => {
 });
 
 it("prevents negative balances from occurring", () => {
+  const balance = 100;
   const transferAmt = 1000;
   const expectedMsg = `You can't transfer more than ${balance}`;
 
