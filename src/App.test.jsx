@@ -31,3 +31,23 @@ it("prevents negative balances from occurring", () => {
 
   expect(screen.getByText(expectedMsg)).toBeInTheDocument();
 });
+
+it("updates the balance after multiple transfers", () => {
+  const transferAmt1 = 20;
+  const transferAmt2 = 30;
+
+  const expectedBalanceMsg = `Your balance is now: ${
+    testBalance - transferAmt1 - transferAmt2
+  }`;
+
+  render(<App />);
+
+  const input = screen.getByLabelText("Transfer Amount");
+  userEvent.type(input, transferAmt1.toString());
+  userEvent.click(screen.getByRole("button"));
+
+  userEvent.type(input, transferAmt2.toString());
+  userEvent.click(screen.getByRole("button"));
+
+  expect(screen.getByText(expectedBalanceMsg)).toBeInTheDocument();
+});
