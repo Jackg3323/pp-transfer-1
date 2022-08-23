@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import apiService from "./api";
 import "./App.css";
 import Form from "./components/Form/Form";
 
@@ -6,8 +7,22 @@ function App() {
   const [transferStatus, setTransferStatus] = useState({
     amt: 0,
     msg: "",
-    balance: 100,
+    balance: null,
   });
+
+  useEffect(() => {
+    apiService
+      .findUser("codefinity", "forgetmenot")
+      .then((user) => {
+        setTransferStatus((prev) => ({
+          ...prev,
+          balance: user[0].balance,
+        }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
