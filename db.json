@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "codefinity",
+      "password": "forgetmenot",
+      "balance": 1111.11
+    },
+    {
+      "id": 2,
+      "username": "codefinity2",
+      "password": "forgetmenot2",
+      "balance": 2222.22
+    },
+    {
+      "id": 3,
+      "username": "codefinity3",
+      "password": "forgetmenot3",
+      "balance": 3333.33
+    }
+  ]
+}
