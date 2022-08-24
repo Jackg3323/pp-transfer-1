@@ -1,8 +1,19 @@
+import apiService from "api";
 import Input from "components/Input";
+import { useState } from "react";
 
 export default function Login() {
+  const [user, setUser] = useState(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const username = event.target.elements[0].value;
+    const password = event.target.elements[1].value;
+
+    apiService.findUser(username, password).then((loggedInUser) => {
+      setUser(loggedInUser[0]);
+    });
 
     console.log("submitted");
   };

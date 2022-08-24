@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import Login from "./views/Login/Login";
 import apiService from "./api";
 import "./App.css";
-import Form from "./components/Form/Form";
+import Login from "./views/Login/Login";
 
 function App() {
   const [transferStatus, setTransferStatus] = useState({
@@ -51,7 +50,6 @@ function App() {
   return (
     <>
       <Login />
-      <Form handleSubmit={handleSubmit} />
 
       <p>
         {transferStatus.msg} {transferStatus.amt > 0 && transferStatus.amt}
