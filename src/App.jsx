@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import apiService from "./api";
 import "./App.css";
 import Login from "./views/Login/Login";
+import Transfer from "./views/Transfer/Transfer";
 
 function App() {
   const [transferStatus, setTransferStatus] = useState({
@@ -50,7 +51,7 @@ function App() {
   return (
     <>
       <Login />
-
+      <Transfer />
       <p>
         {transferStatus.msg} {transferStatus.amt > 0 && transferStatus.amt}
       </p>
